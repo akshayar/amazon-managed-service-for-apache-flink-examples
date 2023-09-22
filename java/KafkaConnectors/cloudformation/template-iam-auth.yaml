@@ -150,21 +150,21 @@ Resources:
               - kafka-cluster:WriteData
               - kafka-cluster:ReadData
             Resource:
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SinkClustername}/*"
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SourceClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:topic/${SinkClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:topic/${SourceClustername}/*"
           - Effect: Allow
             Action:
               - kafka-cluster:AlterGroup
               - kafka-cluster:AlterGroup
             Resource:
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SinkClustername}/*"
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SourceClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:group/${SinkClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:group/${SourceClustername}/*"
           - Effect: Allow
             Action:
               - kafka-cluster:*TransactionalId*
             Resource:
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SinkClustername}/*"
-              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:cluster/${SourceClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:transactional-id/${SinkClustername}/*"
+              - !Sub "arn:aws:kafka:${AWS::Region}:${AWS::AccountId}:transactional-id/${SourceClustername}/*"
   FlinkApplicationServiceExecutionRole:
     Type: AWS::IAM::Role
     Properties:
