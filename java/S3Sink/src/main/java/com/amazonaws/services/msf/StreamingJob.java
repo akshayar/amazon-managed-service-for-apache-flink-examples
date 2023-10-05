@@ -72,6 +72,8 @@ public class StreamingJob {
         kinesisConsumerConfig.put(AWSConfigConstants.AWS_REGION, streamRegion);
         kinesisConsumerConfig.put(ConsumerConfigConstants.STREAM_INITIAL_POSITION, "LATEST");
 
+        LOGGER.info("Kinesis configuration "+kinesisConsumerConfig);
+
         // If EFO consumer is needed, uncomment the following block.
         /*
         kinesisConsumerConfig.put(ConsumerConfigConstants.RECORD_PUBLISHER_TYPE,
@@ -109,6 +111,7 @@ public class StreamingJob {
 
         // Application configuration
         Properties applicationProperties = loadApplicationProperties(env).get(APPLICATION_CONFIG_GROUP);
+        LOGGER.info("Application configuration "+applicationProperties);
         String inputStream = Preconditions.checkNotNull(applicationProperties.getProperty("input.stream"), "Input Kinesis Stream not defined");
         String streamRegion = Preconditions.checkNotNull(applicationProperties.getProperty("stream.region"), "Region of Kinesis Streams not Defined");
         String s3SyncPatch = Preconditions.checkNotNull(applicationProperties.getProperty("s3.path"), "Path for S3 not defined");

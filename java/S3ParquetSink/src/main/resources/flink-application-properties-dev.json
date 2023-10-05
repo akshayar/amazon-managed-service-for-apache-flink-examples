@@ -2,9 +2,9 @@
   {
     "PropertyGroupId": "FlinkApplicationProperties",
     "PropertyMap": {
-      "input.stream": "<StreamName>",
-      "stream.region": "<AWSRegion>",
-      "s3.path": "<S3Path>"
+      "input.stream": "stream-input",
+      "stream.region": "ap-south-1",
+      "s3.path": "s3://aksh-flink-sink/flink/msf/"
     }
   }
 ]
