@@ -2,7 +2,7 @@
 
 Example of project for a basic Flink Java application using Tumbling and Sliding windows.
 
-* Flink version: 1.15.2
+* Flink version: 1.15
 * Flink API: DataStream API
 * Flink Connectors: Kafka Connector, Kinesis Connector
 * Language: Java (11)
@@ -50,15 +50,17 @@ To start the Flink job in IntelliJ edit the Run/Debug configuration enabling *'A
 the classpath'*.
 
 ```
---InputStreamRegion ap-south-1 --InputStreamName stream-input --OutputStreamRegion ap-south-1 --OutputStreamName stream-windowing-sliding-output
+--InputStreamRegion ap-south-1 --InputStreamName stream-input --OutputStreamRegion ap-south-1 --OutputStreamName stream-windowing-output
 ```
 
+Following is the screenshot of run configuration
+![Run Configuration](images/runConfiguration.png)
 ## Running locally through Maven command line
 
 ```
  mvn clean compile exec:java  -Dexec.classpathScope="compile" \
  -Dexec.mainClass="com.amazonaws.services.msf.windowing.kinesis.TumblingWindowStreamingJob" \
- -Dexec.args="--InputStreamRegion ap-south-1 --InputStreamName stream-input --OutputStreamRegion ap-south-1 --OutputStreamName stream-windowing-sliding-output" 
+ -Dexec.args="--InputStreamRegion ap-south-1 --InputStreamName stream-input --OutputStreamRegion ap-south-1 --OutputStreamName stream-windowing-tumbling-output" 
 
 ```
 ## Deploying using CloudFormation to Amazon Managed Service for Apache Flink

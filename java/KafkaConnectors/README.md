@@ -1,6 +1,6 @@
 # Flink Kafka Source & Sink Examples
 
-* Flink version: 1.15.2
+* Flink version: 1.15
 * Flink API: DataStream API
 * Language: Java (11)
 
@@ -63,10 +63,15 @@ Provide arguments like following -
 --source.bootstrap.servers localhost:9092 --source.topic source --sink.bootstrap.servers localhost:9092 --sink.topic sink --sink.transaction.timeout.ms 1000
 ```
 
+Following is the screenshot of run configuration
+![Run Configuration](images/runConfiguration.png)
+
 ## Running locally through Maven command line
 Refer following sample -
 ```
- mvn clean compile exec:java -Dexec.classpathScope="compile" -Dexec.mainClass="com.amazonaws.services.msf.KafkaStreamingJob" -Dexec.args="--source.bootstrap.servers localhost:9092 --source.topic source --sink.bootstrap.servers localhost:9092 --sink.topic sink --sink.transaction.timeout.ms 1000" 
+ mvn clean compile exec:java -Dexec.classpathScope="compile" \
+ -Dexec.mainClass="com.amazonaws.services.msf.KafkaStreamingJob" \
+ -Dexec.args="--source.bootstrap.servers localhost:9092 --source.topic source --sink.bootstrap.servers localhost:9092 --sink.topic sink --sink.transaction.timeout.ms 1000" 
 
 ```
 

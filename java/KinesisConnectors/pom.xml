@@ -16,9 +16,8 @@
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <flink.version>1.15.4</flink.version>
         <kda.runtime.version>1.2.0</kda.runtime.version>
-        <!-- We are not using 1.15.2 because there are known bugs that were fixed in 1.15.4 for FlinkKinesisConsumer not respecting Credential Provider configuration for EFO FLINK-29205-->
-        <flink.kds.connector.version>1.15.4</flink.kds.connector.version>
         <log4j.version>2.17.1</log4j.version>
+        <slf4j.version>2.0.9</slf4j.version>
     </properties>
 
     <dependencies>
@@ -47,12 +46,12 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kinesis</artifactId>
-            <version>${flink.kds.connector.version}</version>
+            <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-aws-kinesis-streams</artifactId>
-            <version>${flink.kds.connector.version}</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <!-- Logging framework, to produce console output when running in the IDE. -->
@@ -74,6 +73,16 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 

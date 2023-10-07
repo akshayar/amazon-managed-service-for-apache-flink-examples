@@ -2,7 +2,7 @@
 
 Example of project for a basic Flink Java application using Tumbling and Sliding windows.
 
-* Flink version: 1.15.2
+* Flink version: 1.15
 * Flink API: DataStream API
 * Flink Connectors: Kafka Connector, Kinesis Connector
 * Language: Java (11)
@@ -54,6 +54,8 @@ the classpath'*.
 --InputStreamRegion ap-south-1 --InputStreamName stream-input --OutputStreamRegion ap-south-1 --OutputStreamName stream-windowing-sliding-output
 ```
 
+Following is the screenshot of run configuration
+![Run Configuration](images/runConfiguration.png)
 ## Running locally through Maven command line
 
 ```
